@@ -89,7 +89,7 @@ document.addEventListener("scroll", onScroll);
       const lightbox = GLightbox({
         href: videoUrl + "?modestbranding=1&rel=0&autoplay=1",
         type: "video",
-        source: "youtube",
+        source: "local",
         width: 900,
       });
   
