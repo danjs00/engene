@@ -80,14 +80,22 @@ document.addEventListener("scroll", onScroll);
     });
   });
 
-  // === Lightbox para videos
-  const myGallery = GLightbox({
-    href: "https://www.youtube.com/watch?v=yZge89H6qW0",
-    type: "video",
-    source: "youtube",
-    width: 900,
-    autoplayVideos: true,
-  });
+  document.addEventListener("DOMContentLoaded", function () {
+    const videoButton = document.querySelector(".video-btn");
+  
+    videoButton.addEventListener("click", function () {
+      const videoUrl = this.getAttribute("data-src");
+  
+      const lightbox = GLightbox({
+        href: videoUrl + "?modestbranding=1&rel=0&autoplay=1",
+        type: "video",
+        source: "youtube",
+        width: 900,
+      });
+  
+      lightbox.open();
+    });
+  });  
   
     // === Volver arriba con animación
     function scrollToTop() {
