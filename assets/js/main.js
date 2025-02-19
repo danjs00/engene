@@ -82,9 +82,9 @@ document.addEventListener("scroll", onScroll);
 
   // === Lightbox para videos
   const myGallery = GLightbox({
-    href: "assets/images/home/videoen.mp4",
+    href: "https://www.youtube.com/watch?v=yZge89H6qW0",
     type: "video",
-    source: "local",
+    source: "youtube",
     width: 900,
     autoplayVideos: true,
   });
