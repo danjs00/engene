@@ -82,20 +82,33 @@ document.addEventListener("scroll", onScroll);
 
   document.addEventListener("DOMContentLoaded", function () {
     const videoButton = document.querySelector(".video-btn");
-  
+    const modal = document.getElementById("videoModal");
+    const modalContent = document.querySelector(".modal-content");
+    const videoFrame = document.getElementById("videoFrame");
+    const closeButton = document.querySelector(".close-btn");
+
     videoButton.addEventListener("click", function () {
-      const videoUrl = this.getAttribute("data-src");
-  
-      const lightbox = GLightbox({
-        href: videoUrl + "?modestbranding=1&rel=0&autoplay=1",
-        type: "video",
-        source: "local",
-        width: 900,
-      });
-  
-      lightbox.open();
+        const videoUrl = this.getAttribute("data-src");
+        videoFrame.src = videoUrl;
+        modal.classList.add("active");
     });
-  });  
+
+    function closeModal() {
+        modal.classList.remove("active");
+        setTimeout(() => {
+            videoFrame.src = ""; // Detener el video tras cerrar el modal
+        }, 300); // Esperar a que termine la animación
+    }
+
+    closeButton.addEventListener("click", closeModal);
+    modal.addEventListener("click", function (event) {
+        if (!modalContent.contains(event.target)) {
+            closeModal();
+        }
+    });
+});
+
+
   
     // === Volver arriba con animación
     function scrollToTop() {
