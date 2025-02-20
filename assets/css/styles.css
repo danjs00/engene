@@ -1109,6 +1109,7 @@ p {
   opacity: 1;
   position: absolute;
   color: #f32a2a;
+  margin-bottom: 10px;
   }
 
   .widget-links li a.enflix:hover {
@@ -1116,22 +1117,4 @@ background-color: #d41111;
 padding: 10px;
 border-radius: 5px;
 color: #fff;
-}
-
-/* Estilos para móviles */
-@media (max-width: 768px) {
-  .widget-links li a.enflix {
-    font-weight: 600;
-    opacity: 1;
-    position: absolute;
-    color: #f32a2a;
-    margin-bottom: 10px;
-    }
-  
-    .widget-links li a.enflix:hover {
-  background-color: #d41111;
-  padding: 10px;
-  border-radius: 5px;
-  color: #fff;
-  }
 }
